@@ -18,11 +18,9 @@ public class CheckCenterController
 
     //页面请求
     @GetMapping("/socket/{cid}")
-    public ModelAndView socket(@PathVariable String cid)
+    public Msg<String> socket(@PathVariable String cid)
     {
-        ModelAndView mav = new ModelAndView("/socket");
-        mav.addObject("cid", cid);
-        return mav;
+        return Msg.ok("房间请求成功",cid);
     }
 
     //推送数据接口
